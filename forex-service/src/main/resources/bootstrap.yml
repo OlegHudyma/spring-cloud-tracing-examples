@@ -4,6 +4,11 @@ spring:
   h2:
     console:
       enabled: true
+  zipkin:
+    baseUrl: http://18.197.31.34:9411/
+  sleuth:
+    sampler:
+      probability: 1.0
 
 server:
   port: 8000
