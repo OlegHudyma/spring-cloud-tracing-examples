@@ -1,0 +1,9 @@
+# Default ignored files
+.idea/**
+/.idea/shelf/
+/.idea/workspace.xml
+
+# Project exclude paths
+/currency-conversion/target/
+/discovery/target/
+/forex-service/target/
