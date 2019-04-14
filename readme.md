@@ -1,0 +1,1 @@
+Cloned from https://github.com/in28minutes/spring-boot-examples/tree/master/spring-boot-basic-microservice
