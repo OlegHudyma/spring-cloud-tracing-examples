@@ -21,28 +21,6 @@ public class CurrencyConversionController {
 
   private final CurrencyExchangeServiceProxy proxy;
 
-  @GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
-  public CurrencyConversionBean convertCurrency(@PathVariable String from,
-                                                @PathVariable String to,
-                                                @PathVariable BigDecimal quantity) {
-    Map<String, String> uriVariables = ImmutableMap
-            .<String, String>builder()
-            .put("from", from)
-            .put("to", to)
-            .build();
-
-    log.info("Getting conversion results with rest template.");
-
-    ResponseEntity<CurrencyConversionBean> responseEntity = new RestTemplate().getForEntity(
-            "http://localhost:8000/currency-exchange/from/{from}/to/{to}", CurrencyConversionBean.class,
-            uriVariables);
-
-    CurrencyConversionBean response = responseEntity.getBody();
-
-    return new CurrencyConversionBean(response.getId(), from, to, response.getConversionMultiple(), quantity,
-            quantity.multiply(response.getConversionMultiple()), response.getPort());
-  }
-
   @GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}")
   public CurrencyConversionBean convertCurrencyFeign(@PathVariable String from, @PathVariable String to,
                                                      @PathVariable BigDecimal quantity) {
