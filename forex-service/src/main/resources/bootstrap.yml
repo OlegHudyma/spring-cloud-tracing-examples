@@ -13,3 +13,8 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka
 
+opentracing:
+  jaeger:
+    udp-sender:
+      host: 18.197.31.34
+      port: 6831
