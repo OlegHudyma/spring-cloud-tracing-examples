@@ -5,7 +5,7 @@ spring:
     console:
       enabled: true
   zipkin:
-    baseUrl: http://18.197.31.34:9411/
+    baseUrl: http://localhost:9411/
   sleuth:
     sampler:
       probability: 1.0
