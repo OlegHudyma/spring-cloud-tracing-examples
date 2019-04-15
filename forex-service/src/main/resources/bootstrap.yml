@@ -16,5 +16,5 @@ eureka:
 opentracing:
   jaeger:
     udp-sender:
-      host: 18.197.31.34
+      host: localhost
       port: 6831
